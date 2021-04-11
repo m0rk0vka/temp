@@ -16,10 +16,22 @@ public class second {
             
             long start = System.currentTimeMillis();
             // bad while
-            while(proc.waitFor() != 0)
+            boolean x = true;
+            while(x)
             {   
                 TimeUnit.SECONDS.sleep(1);
                 System.out.println((System.currentTimeMillis() - start) / 1000);
+                try
+                {
+                    Integer result = proc.exitValue();
+                    if (result == 0)
+                    {
+                        break;
+                    }
+                } catch (IllegalThreadStateException e) {
+                    //do nothing
+                }
+            
             }
 
             BufferedReader reader = new BufferedReader(new 
@@ -33,7 +45,6 @@ public class second {
             }
             
             reader.close();
-            //proc.waitFor();
             
         } catch (IOException e) {
             System.out.println("exception thrown: " + e.getMessage());
