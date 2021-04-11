@@ -23,10 +23,13 @@ public class second {
                 try
                 {
                     Integer result = proc.exitValue();
+                    /* if result != 0
                     if (result == 0)
                     {
+                        //System.out.println((System.currentTimeMillis() - start) / 1000);
                         break;
-                    }
+                    }*/
+                    break;
                 } catch (IllegalThreadStateException e) {
                     //do nothing
                 }
