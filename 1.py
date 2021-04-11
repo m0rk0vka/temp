@@ -18,7 +18,6 @@ def foo():
 def print_vars():
     frame = sys._getframe()
     locals = frame.f_back.f_locals
-    print(locals.keys())
     for el in locals.keys():
         value = locals.get(el)
         if value.__class__.__module__ == '__builtin__':
