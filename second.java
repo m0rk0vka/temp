@@ -15,7 +15,6 @@ public class second {
             Process proc = Runtime.getRuntime().exec(str + " -m timeit -r 10");
             
             long start = System.currentTimeMillis();
-            // bad while
             boolean x = true;
             while(x)
             {   
